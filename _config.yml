@@ -13,41 +13,41 @@ baseurl: ""
 lang: en
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone:
+timezone: "Europe/Paris"
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: Jean Parpaillon # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the sub-title
+tagline: Scalable Software Solutions # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  Jean Parpaillon - Consultancy for Scalable Software Solutions
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ""
+url: "https://jeanparpaillon.github.io"
 
 github:
-  username: github_username # change to your github username
+  username: jeanparpaillon # change to your github username
 
 twitter:
-  username: twitter_username # change to your twitter username
+  username: JeanParpaillon # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
-  email: example@domain.com # change to your email address
+  name: Jean Parpaillon
+  email: jean@parpaillon.info # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your twitter homepage
-    - https://github.com/username # change to your github homepage
+    - https://twitter.com/JeanParpaillon # change to your twitter homepage
+    - https://github.com/jeanparpaillon # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://www.linkedin.com/in/jeanparpaillon
 
-google_site_verification: # fill in to your verification string
+google_site_verification: "0cQeGOLyB9_Vfzyq8KRZSeXeqvyGAAKdjoAyvVDf6dA" # fill in to your verification string
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
@@ -70,7 +70,7 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: # [light|dark]
+theme_mode: "dark" # [light|dark]
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
@@ -80,7 +80,7 @@ theme_mode: # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: "/assets/img/avatar-256.png"
 
 # boolean type, the global switch for TOC in posts.
 toc: true
@@ -188,6 +188,7 @@ exclude:
   - rollup.config.js
   - node_modules
   - package*.json
+  - Makefile
 
 jekyll-archives:
   enabled: [categories, tags]
