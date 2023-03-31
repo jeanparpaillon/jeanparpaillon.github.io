@@ -1,3 +1,9 @@
+###
+# Resources
+#
+# * https://fontawesome-v4.github.io/
+###
+
 .DEFAULT_GOAL = help
 
 all: deps ## Build static website

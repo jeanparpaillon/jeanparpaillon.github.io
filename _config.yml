@@ -135,6 +135,8 @@ collections:
   tabs:
     output: true
     sort_by: order
+  portfolio:
+    output: true
 
 defaults:
   - scope:
