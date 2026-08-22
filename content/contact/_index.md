@@ -1,13 +1,19 @@
 ---
-title: "Let's work together"
+title: "Let's talk."
+layout: "contact"
+subtitle: "Have a project, a technical challenge, or an opportunity in mind?"
 description: "Architecture and technology consulting, R&D and innovation programmes, technical assessments, product advisory."
 links:
-  - name: "Email"
+  - name: "Schedule a call"
+    url: "https://calendly.com/jean-parpaillon-2zi/30min"
+    icon: "calendar"
+    primary: true
+  - name: "Drop me a message"
     url: "mailto:jean@parpaillon.info"
-    description: "jean@parpaillon.info"
-  - name: "LinkedIn"
+    icon: "email"
+  - name: "Connect on LinkedIn"
     url: "https://www.linkedin.com/in/jeanparpaillon/"
-    description: "Message me on LinkedIn"
+    icon: "linkedin"
 ---
 
 I am available for:

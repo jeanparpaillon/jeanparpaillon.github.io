@@ -1,0 +1,43 @@
+{{/* Contact page -- copy and links come from content/contact/_index.md front matter. */}}
+{{ define "main" }}
+  <section class="mb-12 text-center">
+    <h1 class="text-foreground mb-4 text-3xl font-bold sm:text-4xl">
+      {{ .Title }}
+    </h1>
+
+    {{ with .Params.subtitle }}
+      <p class="text-muted-foreground mx-auto mb-8 max-w-2xl leading-relaxed">
+        {{ . }}
+      </p>
+    {{ end }}
+
+    {{ with .Params.links }}
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        {{ range . }}
+          <a
+            href="{{ .url }}"
+            {{ if hasPrefix .url "http" }}target="_blank" rel="noopener noreferrer"{{ end }}
+            class="{{ if .primary }}
+              bg-primary text-primary-foreground hover:bg-primary/90
+            {{ else }}
+              border-border text-foreground hover:bg-muted/50 border
+            {{ end }} inline-flex items-center gap-2 rounded-xl px-6 py-3 font-medium shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 focus:outline-none"
+          >
+            {{ with .icon }}
+              {{ partial "features/icon.html" (dict "name" . "class" "h-4 w-4" "hidden" true) }}
+            {{ end }}
+            <span>{{ .name }}</span>
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+  </section>
+
+  {{ with .Content }}
+    <div class="bg-card border-border mb-8 rounded-lg border p-6 shadow-sm">
+      <div class="prose prose-neutral dark:prose-invert max-w-none">
+        {{ . }}
+      </div>
+    </div>
+  {{ end }}
+{{ end }}
