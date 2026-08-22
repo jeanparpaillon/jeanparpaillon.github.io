@@ -1,0 +1,20 @@
+{{/* Recommendation card
+  @context {page} .page  a page from content/recommendations/
+*/}}
+{{ $page := .page }}
+<figure class="border-border bg-card h-full rounded-xl border p-6 shadow-sm">
+  <blockquote class="text-foreground/90 leading-relaxed">
+    {{ $page.Content }}
+  </blockquote>
+  <figcaption class="text-muted-foreground mt-4 text-sm">
+    <span class="text-foreground font-medium">
+      {{ with $page.Params.linkedin }}
+        <a href="{{ . }}" rel="noopener noreferrer" target="_blank">{{ $page.Params.name }}</a>
+      {{ else }}
+        {{ $page.Params.name }}
+      {{ end }}
+    </span>
+    {{ with $page.Params.role }}<span> &middot; {{ . }}</span>{{ end }}
+    {{ with $page.Params.company }}<span> &middot; {{ . }}</span>{{ end }}
+  </figcaption>
+</figure>

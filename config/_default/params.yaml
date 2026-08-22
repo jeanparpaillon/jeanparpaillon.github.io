@@ -1,0 +1,137 @@
+# --- Site identity / SEO -----------------------------------------------------
+description: "Senior Software Architect & IT Innovation Consultant. I help organisations turn complex technology, R&D and architecture challenges into actionable strategies."
+keywords:
+  - Software Architecture
+  - IT Innovation
+  - Distributed Systems
+  - R&D
+  - Consulting
+  - Open Source
+defaultAuthor: "Jean Parpaillon"
+language: "en"
+shortName: "Jean Parpaillon"
+
+favicon:
+  svg: "/favicon.svg"
+
+author:
+  name: "Jean Parpaillon"
+  title: "Senior Software Architect & IT Innovation Consultant"
+  description: "Architecture, innovation and product strategy for complex technical systems."
+  # avatar: "/images/avatar.jpg"
+  social:
+    - name: "GitHub"
+      url: "https://github.com/jeanparpaillon"
+      icon: "github"
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/jeanparpaillon/"
+      icon: "linkedin"
+    - name: "Email"
+      url: "mailto:jean@parpaillon.info"
+      icon: "email"
+
+# --- Header / chrome ---------------------------------------------------------
+header:
+  sticky: true
+  logo:
+    image: ""
+    link: "/"
+  showThemeSwitch: false
+  showDarkModeSwitch: true
+  showContentWidthSwitch: false
+  showLanguageSwitch: false
+
+dock: "scroll"
+contentWidth: "56rem"
+
+toc:
+  enabled: true
+  position: "center"
+
+colorScheme: "slate"
+
+# --- Home page ---------------------------------------------------------------
+# Sections are partials looked up in layouts/_partials/home/.
+# Local overrides/additions live in layouts/_partials/home/.
+home:
+  recentPostsCount: 3
+  contentOrder:
+    - hero
+    - featured-projects
+    - services-summary
+    - recommendations
+    - contact-cta
+
+# Home hero copy (rendered by layouts/_partials/home/hero.html)
+hero:
+  title: "Senior Software Architect & IT Innovation Consultant"
+  subtitle: |
+    I help organisations turn complex technology, R&D and architecture
+    challenges into actionable strategies.
+  expertise:
+    - Architecture
+    - Innovation
+    - Distributed Systems
+    - Open Source
+  actions:
+    - name: "Explore services"
+      url: "/services/"
+      primary: true
+    - name: "View portfolio"
+      url: "/portfolio/"
+      primary: false
+
+# Home contact CTA (rendered by layouts/_partials/home/contact-cta.html)
+contactCta:
+  title: "Have a complex technology or innovation challenge?"
+  description: "Let's discuss it."
+  action:
+    name: "Get in touch"
+    url: "/contact/"
+
+# --- Content features --------------------------------------------------------
+post:
+  showRelated: true
+  relatedPostsCount: 3
+  license:
+    show: false
+
+comments:
+  enabled: false
+
+analytics:
+  enabled: false
+
+katex:
+  enabled: false
+
+mermaid:
+  enabled: true
+
+gallery:
+  enabled: true
+  defaultLayout: justified
+  gap: 10
+  targetRowHeight: 200
+  lastRowBehavior: center
+
+lightbox:
+  enabled: true
+
+codeblock:
+  collapse:
+    enabled: true
+    defaultState: expanded
+    autoCollapseLines: 30
+    autoCollapseHeight: 400
+    collapsedHeight: 120
+
+readingProgress:
+  enabled: true
+  showOnHomepage: false
+
+dateFormat:
+  full: ":date_full"
+  long: ":date_long"
+  medium: ":date_medium"
+  short: ":date_short"

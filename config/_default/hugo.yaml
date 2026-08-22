@@ -1,0 +1,59 @@
+baseURL: https://parpaillon.info/
+locale: en
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+title: "Jean Parpaillon"
+enableEmoji: true
+enableRobotsTXT: true
+
+# Sections used for search index, archives and "recent" listings.
+mainSections: ["portfolio"]
+
+permalinks:
+  portfolio: /portfolio/:slug/
+  services: /services/:slug/
+
+pagination:
+  pagerSize: 12
+  path: "page"
+
+# Portfolio filtering (see README.md)
+taxonomies:
+  tag: tags
+  role: roles
+  domain: domains
+
+markup:
+  tableOfContents:
+    startLevel: 2
+    endLevel: 4
+    ordered: false
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      strikethrough: true
+  highlight:
+    codeFences: true
+    guessSyntax: false
+    lineNos: false
+    lineNumbersInTable: false
+    noClasses: false
+    style: github
+    tabWidth: 2
+
+outputs:
+  home: ["HTML", "RSS", "JSON", "WebAppManifest"]
+
+outputFormats:
+  WebAppManifest:
+    mediaType: "application/manifest+json"
+    baseName: "site"
+    isPlainText: true
+
+module:
+  hugoVersion:
+    extended: true
+    min: "0.165.0"
+  imports:
+    - path: github.com/tom2almighty/hugo-narrow

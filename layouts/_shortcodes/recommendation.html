@@ -1,0 +1,9 @@
+{{/* {{< recommendation "jane-doe" >}} -- file name in content/recommendations/ */}}
+{{ $name := .Get 0 }}
+{{ with site.GetPage (printf "/recommendations/%s" $name) }}
+  <div class="my-6">
+    {{ partial "content/recommendation-card.html" (dict "page" .) }}
+  </div>
+{{ else }}
+  {{ errorf "recommendation shortcode: no page content/recommendations/%s.md (called from %s)" $name $.Page.Path }}
+{{ end }}

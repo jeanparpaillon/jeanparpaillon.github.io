@@ -1,0 +1,17 @@
+{{/* Featured recommendations from the headless content/recommendations/ section. */}}
+{{ with site.GetPage "/recommendations" }}
+  {{ $featured := where .RegularPages "Params.featured" true }}
+  {{ if $featured }}
+    <section class="mb-12">
+      <div class="mb-6">
+        <h2 class="text-foreground text-2xl font-bold">What people say</h2>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {{ range first 3 $featured.ByWeight }}
+          {{ partial "content/recommendation-card.html" (dict "page" .) }}
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

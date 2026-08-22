@@ -223,3 +223,61 @@ recommendations:
 Recommendation should be in separate individual files, then:
 - `feature` flag makes it home page top recommendation (2-3)
 - project card can insert recommendation on demand
+
+# Getting started
+
+Requires **Hugo extended ≥ 0.165.0** (theme requirement) and Go (the theme is
+installed as a Hugo module, no submodule / vendored copy).
+
+```sh
+make serve        # local server, drafts included, http://localhost:1313
+make build        # production build into public/
+make update-theme # pull the latest hugo-narrow release
+```
+
+New content:
+
+```sh
+make new-work NAME=my-project              # content/portfolio/my-project.md
+make new-recommendation NAME=jane-doe      # content/recommendations/jane-doe.md
+```
+
+## Repository layout
+
+```
+config/_default/
+├── hugo.yaml       # site, taxonomies, permalinks, module import
+├── params.yaml     # theme options + home page copy (hero, CTA, order)
+└── menus.yaml      # main / footer / social menus
+content/
+├── _index.md
+├── services/{_index,consulting-transformation,it-innovation,architecture-product}.md
+├── portfolio/      # `Work` section, exposed as /portfolio/
+├── recommendations/  # headless: never rendered on its own
+├── about/_index.md
+└── contact/_index.md
+archetypes/         # frontmatter templates used by `hugo new`
+layouts/            # local overrides only (see below)
+assets/css/custom/  # plain CSS loaded after the theme bundle
+static/             # CNAME, favicon, cv.pdf, images…
+```
+
+## Notes on the theme integration
+
+- The theme (`hugo-narrow`) hardcodes the section name `projects` in its project
+  layouts. `content/portfolio/` cascades `type: projects` so the theme's card /
+  list / single layouts apply unchanged, and
+  `layouts/_partials/home/featured-projects.html` overrides the theme partial to
+  read the `portfolio` section.
+- The home page is composed from `params.home.contentOrder`; each entry is a
+  partial in `layouts/_partials/home/`. Local sections: `hero`,
+  `services-summary`, `recommendations`, `contact-cta`.
+- Recommendations are one file per person in `content/recommendations/`
+  (headless). `featured: true` puts one on the home page (keep 2–3); any page
+  can embed one with `{{< recommendation "jane-doe" >}}`.
+- The theme ships a **pre-built** Tailwind bundle (`assets/css/compiled.css`),
+  so new Tailwind utility classes used in local layouts are not generated at
+  build time. Reuse classes the theme already emits, or write plain CSS in
+  `assets/css/custom/`.
+- Technology and theme tags go into `tags`; `roles` and `domains` are separate
+  taxonomies, per the filtering plan above.

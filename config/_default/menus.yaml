@@ -1,0 +1,73 @@
+main:
+  - name: Services
+    pageRef: /services
+    weight: 10
+    params:
+      icon: layers
+
+  - name: Consulting & Transformation
+    pageRef: /services/consulting-transformation
+    parent: Services
+    weight: 1
+
+  - name: IT Innovation
+    pageRef: /services/it-innovation
+    parent: Services
+    weight: 2
+
+  - name: Architecture & Product
+    pageRef: /services/architecture-product
+    parent: Services
+    weight: 3
+
+  - name: Work
+    pageRef: /portfolio
+    weight: 20
+    params:
+      icon: projects
+
+  - name: About
+    pageRef: /about
+    weight: 30
+    params:
+      icon: about
+
+  - name: Contact
+    pageRef: /contact
+    weight: 40
+    params:
+      icon: email
+
+footer:
+  - name: Work
+    pageRef: /portfolio
+    weight: 10
+    params:
+      icon: projects
+  - name: About
+    pageRef: /about
+    weight: 20
+    params:
+      icon: about
+  - name: Contact
+    pageRef: /contact
+    weight: 30
+    params:
+      icon: email
+
+social:
+  - name: GitHub
+    url: https://github.com/jeanparpaillon
+    weight: 10
+    params:
+      icon: github
+  - name: LinkedIn
+    url: https://www.linkedin.com/in/jeanparpaillon/
+    weight: 20
+    params:
+      icon: linkedin
+  - name: Email
+    url: mailto:jean@parpaillon.info
+    weight: 30
+    params:
+      icon: email

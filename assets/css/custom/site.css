@@ -1,0 +1,9 @@
+/*
+ * Site-level CSS overrides.
+ *
+ * Every file matching assets/css/custom/*.css is loaded after the theme's
+ * compiled Tailwind bundle. Plain CSS only: the theme ships a pre-built
+ * compiled.css, so new Tailwind utility classes used in local layouts are NOT
+ * generated at build time -- reuse the utilities the theme already emits, or
+ * declare the styles here.
+ */

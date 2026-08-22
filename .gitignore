@@ -1,1 +1,6 @@
 *~
+/public/
+/resources/
+/.cache/
+/.hugo_build.lock
+/node_modules/

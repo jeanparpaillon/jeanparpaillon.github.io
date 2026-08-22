@@ -1,0 +1,42 @@
+{{/* Home hero -- copy comes from params.yaml `hero`. */}}
+{{ $hero := site.Params.hero }}
+<section class="mb-12 text-center">
+  <h1 class="text-foreground mb-4 text-3xl font-bold sm:text-4xl">
+    {{ $hero.title | default site.Params.author.title }}
+  </h1>
+
+  {{ with $hero.subtitle }}
+    <p class="text-muted-foreground mx-auto mb-8 max-w-2xl leading-relaxed">
+      {{ . }}
+    </p>
+  {{ end }}
+
+  {{ with $hero.actions }}
+    <div class="mb-8 flex flex-wrap items-center justify-center gap-4">
+      {{ range . }}
+        <a
+          href="{{ .url | relLangURL }}"
+          class="{{ if .primary }}
+            bg-primary text-primary-foreground hover:bg-primary/90
+          {{ else }}
+            border-border text-foreground hover:bg-muted/50 border
+          {{ end }} inline-flex items-center gap-2 rounded-xl px-6 py-3 font-medium shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 focus:outline-none"
+        >
+          <span>{{ .name }}</span>
+        </a>
+      {{ end }}
+    </div>
+  {{ end }}
+
+  {{ with $hero.expertise }}
+    <div class="flex flex-wrap items-center justify-center gap-2">
+      {{ range . }}
+        <span
+          class="bg-muted/50 text-foreground border-muted/30 rounded border px-2.5 py-0.5 text-xs font-medium"
+        >
+          {{ . }}
+        </span>
+      {{ end }}
+    </div>
+  {{ end }}
+</section>
