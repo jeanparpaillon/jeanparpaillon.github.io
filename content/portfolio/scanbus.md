@@ -36,5 +36,3 @@ Role, decisions, architecture, deliverables.
 ## Outcome
 
 Results, impact, follow-up.
-
-{{< recommendation "jane-doe" >}}

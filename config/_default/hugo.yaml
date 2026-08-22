@@ -57,3 +57,6 @@ module:
     min: "0.165.0"
   imports:
     - path: github.com/tom2almighty/hugo-narrow
+
+build:
+  noJSConfigInAssets: true

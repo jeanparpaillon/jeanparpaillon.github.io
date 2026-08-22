@@ -4,3 +4,4 @@
 /.cache/
 /.hugo_build.lock
 /node_modules/
+/assets/jsconfig.json
