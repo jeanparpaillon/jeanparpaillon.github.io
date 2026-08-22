@@ -173,7 +173,11 @@ I am available for:
 [Email]
 [LinkedIn]
 
-# Hugo content model
+# Hugo architecture
+
+## Theme
+
+Use `hugo-narrow` theme
 
 ## Structure
 
@@ -215,3 +219,7 @@ recommendations:
     quote: "..."
     linkedin: "..."
 ```
+
+Recommendation should be in separate individual files, then:
+- `feature` flag makes it home page top recommendation (2-3)
+- project card can insert recommendation on demand
