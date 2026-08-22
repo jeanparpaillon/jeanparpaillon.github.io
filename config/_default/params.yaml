@@ -18,7 +18,7 @@ author:
   name: "Jean Parpaillon"
   title: "Senior Software Architect & IT Innovation Consultant"
   description: "Architecture, innovation and product strategy for complex technical systems."
-  # avatar: "/images/avatar.jpg"
+  avatar: "/images/avatar_512.png"
   social:
     - name: "GitHub"
       url: "https://github.com/jeanparpaillon"
@@ -34,10 +34,10 @@ author:
 header:
   sticky: true
   logo:
-    image: ""
+    image: "/images/avatar_512.png"
     link: "/"
   showThemeSwitch: false
-  showDarkModeSwitch: true
+  showDarkModeSwitch: false
   showContentWidthSwitch: false
   showLanguageSwitch: false
 
@@ -57,7 +57,7 @@ home:
   recentPostsCount: 3
   contentOrder:
     - hero
-    - featured-projects
+    # - featured-projects
     - services-summary
     - recommendations
     - contact-cta
