@@ -11,6 +11,7 @@ links:
     description: "Open-source work"
   - name: "Curriculum Vitae"
     url: "/cv.pdf"
+    icon: "cv-doc"
     description: "Downloadable CV (PDF)"
 ---
 
