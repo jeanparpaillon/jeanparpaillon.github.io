@@ -101,6 +101,11 @@ comments:
 
 analytics:
   enabled: false
+  umami:
+    enabled: true
+    id: ""
+    src: "https://cloud.umami.is/script.js"
+    domains: ""
 
 katex:
   enabled: false

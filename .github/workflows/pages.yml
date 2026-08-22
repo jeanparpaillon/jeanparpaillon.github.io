@@ -41,6 +41,9 @@ jobs:
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_PARAMS_ANALYTICS_ENABLED: true
+          HUGO_PARAMS_ANALYTICS_UMAMI_ID: ${{ vars.UMAMI_ID }}
+          HUGO_PARAMS_ANALYTICS_UMAMI_DOMAINS: ${{ vars.DOMAIN }}
         run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload Pages artifact
