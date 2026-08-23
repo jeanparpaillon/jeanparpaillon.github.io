@@ -58,5 +58,34 @@ module:
   imports:
     - path: github.com/tom2almighty/hugo-narrow
 
+  # --- English-only content, served in every language ---------------------
+  # Portfolio projects and recommendations are written in English only and are
+  # not going to be translated. Mounting those directories a second time for
+  # fr/it makes the very same files build as French and Italian pages, so each
+  # language gets a complete section instead of an empty one. The chrome around
+  # them (title, filters, nav, cards) still translates normally.
+  mounts:
+    - source: content
+      target: content
+
+    # Portfolio: the section page IS translated (_index.fr.md / _index.it.md),
+    # so exclude _index.* here and let the default mount above provide it.
+    - source: content/portfolio
+      target: content/portfolio
+      files:
+        - '! _index.*'
+      sites:
+        matrix:
+          languages: ['fr', 'it']
+
+    # Recommendations: headless section, quotes stay in their original language.
+    # _index.md is mounted too -- it carries the `build.render: never` cascade
+    # that keeps these out of the published pages, and has no translation.
+    - source: content/recommendations
+      target: content/recommendations
+      sites:
+        matrix:
+          languages: ['fr', 'it']
+
 build:
   noJSConfigInAssets: true
