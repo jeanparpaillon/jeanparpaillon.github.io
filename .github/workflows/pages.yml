@@ -16,7 +16,6 @@ concurrency:
 
 jobs:
   build:
-    if: false # Temporarily disabled
     runs-on: ubuntu-latest
 
     steps:
@@ -51,19 +50,8 @@ jobs:
         with:
           path: ./public
 
-  upload-public:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: ./public
-
   deploy:
-    needs: upload-public
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
