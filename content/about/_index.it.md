@@ -24,3 +24,7 @@ Opero all’intersezione tra architettura, innovazione e strategia di prodotto: 
 - Sistemi distribuiti
 - Tecnologie open source
 - R&S e innovazione
+
+Al di là della tecnologia, sono padre di tre figli. Vivo in Bretagna, non lontano dagli spruzzi del mare e dal largo.
+Navigo su una barca a vela autocostruita di 10,50 metri che si chiama Marmouz (scimmia, in bretone).
+Ogni tanto suono il violino e la chitarra, e scrivo poesie — modi diversi di esplorare, creare e trovare il giusto equilibrio.

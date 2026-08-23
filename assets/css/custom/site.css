@@ -55,3 +55,24 @@
 .work-empty[hidden] {
   display: none;
 }
+
+/* --- About page avatar (layouts/about.html) -------------------------------- */
+
+.about-avatar {
+  float: right;
+  width: 6rem;
+  height: 6rem;
+  margin: 0 0 1rem 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  object-fit: cover;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  shape-outside: circle();
+}
+
+@media (min-width: 640px) {
+  .about-avatar {
+    width: 10rem;
+    height: 10rem;
+  }
+}

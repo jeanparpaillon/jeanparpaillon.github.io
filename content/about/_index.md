@@ -27,3 +27,9 @@ them into working products.
 - Distributed systems
 - Open-source technologies
 - R&D and innovation
+
+Beyond technology, I am a father of three. I'm living in Brittany, where the sea
+is never far away. I occasionally sail on a 36ft self-made sloop sail named
+Marmouz (_monkey_ in Brittanic language). I play the violin, the guitar, and occasionally
+write poetry - different ways of exploring, creating, and finding the right
+balance between structure and freedom.

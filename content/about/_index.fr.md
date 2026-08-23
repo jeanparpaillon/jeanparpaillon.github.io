@@ -24,3 +24,7 @@ J’interviens à la croisée de l’architecture, de l’innovation et de la st
 - Systèmes distribués
 - Technologies open source
 - R&D et innovation
+
+Au-delà de la technologie, je suis père de trois enfants. Je vis en Bretagne, non loin des embruns et du grand large.
+Je navigue sur un voilier auto-construit de 10.50m qui s'appelle Marmouz (_singe_, en Breton).
+À l'occasion, je joue du violon, de la guitare et écrit des poèmes - différents moyens d'explorer, de créer et trouver le bon équilibre.

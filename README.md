@@ -304,3 +304,5 @@ static/             # CNAME, favicon, cv.pdf, images…
   `assets/css/custom/`.
 - Technology and theme tags go into `tags`; `roles` and `domains` are separate
   taxonomies, per the filtering plan above.
+
+Theme files can be found in `.cache/hugo/modules/filecache/modules/pkg/mod/github.com/tom2almighty/hugo-narrow@v1.3.15/`
