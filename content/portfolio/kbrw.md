@@ -6,7 +6,7 @@ draft: false
 client: "KBRW Ad-venture"
 projectType: "Consulting"
 status: "completed"
-link: ""
+link: "https://kbrw.com"
 featured: false
 description: "New generation Order Management System for large retailers, in Erlang and Elixir."
 summary: "Senior developer and DevOps architect on a new generation Order Management System -- Erlang/Elixir back end, Riak storage, high-availability deployment automated with Chef."

@@ -6,10 +6,10 @@ draft: false
 client: "Betika"
 projectType: "Consulting"
 status: "completed"
-link: ""
+link: "https://betika.com"
 featured: true
 description: "Full rewrite of a sport betting platform serving more than 5 million users, in Elixir."
-summary: "Architect and lead developer on the from-scratch rewrite of a +5M users sport betting platform: 100% Elixir, gRPC micro-services, and the migration of the live production system."
+summary: "Architect and lead developer on the rewrite of a +5M users sport betting platform: 100% Elixir, gRPC micro-services, MySQL optimization, and the migration of the live production system."
 cover: ""
 tags:
   - Elixir

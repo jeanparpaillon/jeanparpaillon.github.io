@@ -47,3 +47,5 @@ find out whether the idea could carry a company.
 
 A first-hand run through the whole path from idea to product to market -- and
 the experience that fed everything I have done on innovation since.
+
+{{< recommendation "gaurav-parakh" >}}

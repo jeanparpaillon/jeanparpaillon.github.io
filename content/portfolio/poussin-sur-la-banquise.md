@@ -5,8 +5,8 @@ date: 2024-03-01
 draft: false
 client: "L'Insolite Compagnie"
 projectType: "Personal"
-status: "completed"
-link: ""
+status: "in_progress"
+link: "https://insolitecompagnie.com"
 featured: false
 description: "Arctic navigation on a 6.50m scow, turned into an art show. Producer and president."
 summary: "President and producer of an adventure-based art project: sailing a 6.50m scow to Arctic waters, and building a show out of the voyage."

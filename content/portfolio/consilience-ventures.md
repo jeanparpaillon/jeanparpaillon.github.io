@@ -6,7 +6,7 @@ draft: false
 client: "Consilience Ventures"
 projectType: "Consulting"
 status: "completed"
-link: ""
+link: "https://consilienceventures.com/"
 featured: true
 description: "Tokenized startup accelerator platform: Elixir and Ethereum back end, GraphQL and React front end."
 summary: "Head of Architecture, then distributed systems expert, for a mutualist startup accelerator -- an Elixir + Ethereum platform where equity and services are exchanged as tokens."

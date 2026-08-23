@@ -52,3 +52,5 @@ A product line under clear ownership, and an innovation pipeline connected to
 the products it was meant to feed.
 
 {{< recommendation "arnaud-laprevote" >}}
+
+{{< recommendation "goneri-le-bouder" >}}

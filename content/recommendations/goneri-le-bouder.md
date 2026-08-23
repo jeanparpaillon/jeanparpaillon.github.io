@@ -7,7 +7,6 @@ featured: false
 weight: 100
 ---
 
-Travailler avec Jean est un vrai plaisir, principalement grâce a son caractère
-et a son ouverture d'esprit. En plus de comprendre très vite les enjeux
-techniques d'un projet, il sait rapidement présenter des solutions pertinantes
-et originales.
+Working with Jean is a real pleasure, mainly thanks to his personality and
+open-mindedness. In addition to quickly grasping the technical challenges of a
+project, he can rapidly present relevant and original solutions.

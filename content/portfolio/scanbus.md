@@ -6,7 +6,7 @@ draft: true
 client: "Personal / Open Source"
 projectType: "Open Source"
 status: "in_progress"
-link: ""
+link: "https://github.com/scanbus"
 featured: true
 description: "Example portfolio entry -- replace with a real project."
 summary: "Example portfolio entry -- replace with a real project."
@@ -27,12 +27,15 @@ domains:
 
 ## Context
 
-What the client / project needed.
+Scanbus turns scanner workflows into a quick walk-up experience.
 
 ## What I did
 
-Role, decisions, architecture, deliverables.
+- Architecture
+- Development
+- Website
 
 ## Outcome
 
-Results, impact, follow-up.
+A comprehensive framework that leverages scanner scan-to-pc features into a
+quick walk-up journey for Linux desktop users.

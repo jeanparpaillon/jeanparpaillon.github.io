@@ -6,7 +6,7 @@ draft: false
 client: "Inria / Kerlabs"
 projectType: "R&D"
 status: "completed"
-link: ""
+link: "https://en.wikipedia.org/wiki/Kerrighed"
 featured: false
 description: "Single-System Image distributed operating system for HPC clusters -- from research prototype to customer deployments."
 summary: "Five years on Kerrighed, a Single-System Image cluster operating system: OS integration, a 256-node experimental cluster, a cluster management suite, and HPC solution architecture for customers."

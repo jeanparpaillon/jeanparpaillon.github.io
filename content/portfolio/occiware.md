@@ -6,7 +6,7 @@ draft: false
 client: "Inria"
 projectType: "R&D"
 status: "completed"
-link: ""
+link: "https://occiware.ow2.org/"
 featured: true
 description: "Model-driven engineering research project and toolchain for managing Everything as a Service."
 summary: "Founder and architect of OCCIware, a collaborative R&D project building a formal, tooled framework for cloud resource management on top of the OCCI standard -- and main developer of its erocci runtime."
@@ -39,7 +39,7 @@ precise metamodel and a toolchain to actually build on it.
 
 - Founded the OCCIware collaborative research project and defined its technical
   ambition, then acted as its architect.
-- Main developer of **erocci**, the Erlang OCCI runtime at the heart of the
+- Main developer of [erocci](https://github.com/erocci), the Erlang OCCI runtime at the heart of the
   toolchain: a REST server exposing arbitrary resources through the standard.
 - Contributed to a precise metamodel for OCCI and to the design of the
   industrial, model-driven toolchain built around it.
@@ -47,8 +47,9 @@ precise metamodel and a toolchain to actually build on it.
 
 ## Outcome
 
-An industrial resource-oriented toolchain, an open-source runtime, and published
-research -- *A Precise Metamodel for Open Cloud Computing Interface* and
-*OCCIware - A Formal and Tooled Framework for Managing Everything as a Service*.
+An industrial [resource-oriented toolchain](https://occiware.github.io/), an
+open-source runtime, and published research -- *A Precise Metamodel for Open
+Cloud Computing Interface* and *OCCIware - A Formal and Tooled Framework for
+Managing Everything as a Service*.
 
 {{< recommendation "samir-tata" >}}
