@@ -12,7 +12,7 @@ description: "New generation Order Management System for large retailers, in Erl
 summary: "Senior developer and DevOps architect on a new generation Order Management System -- Erlang/Elixir back end, Riak storage, high-availability deployment automated with Chef."
 cover: ""
 tags:
-  - Erlang
+  - erlang
   - Elixir
   - Riak
   - Chef

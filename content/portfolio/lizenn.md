@@ -12,7 +12,7 @@ description: "IoT platform startup -- co-founder and technical lead. OW2 Best Pr
 summary: "Co-founder and technical lead of an IoT platform startup built on Erlang: turning an idea into a product, and the recognition that came with it."
 cover: ""
 tags:
-  - Erlang
+  - erlang
   - IoT
   - Product
   - Innovation

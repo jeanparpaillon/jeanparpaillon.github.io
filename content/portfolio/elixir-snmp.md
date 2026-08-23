@@ -24,6 +24,7 @@ roles:                     # Architect | Technical Lead | Product Owner | R&D Ma
 domains:                   # Telecom | IoT | Embedded | Open Source | Cloud
   - Open Source
   - Telecom
+  - IoT
 # Insert a recommendation in the body with {{< recommendation "file-name" >}}
 ---
 

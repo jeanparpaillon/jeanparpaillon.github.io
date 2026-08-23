@@ -12,7 +12,7 @@ description: "Model-driven engineering research project and toolchain for managi
 summary: "Founder and architect of OCCIware, a collaborative R&D project building a formal, tooled framework for cloud resource management on top of the OCCI standard -- and main developer of its erocci runtime."
 cover: ""
 tags:
-  - Erlang
+  - erlang
   - REST
   - OCCI
   - Cloud Computing
