@@ -1,7 +1,7 @@
 ---
 title: 'Telecom Arch & Tech Leadership'
 slug: 'telecom-app'
-date: 2014
+date: 2014-09-01
 draft: false
 client: ""
 projectType: "Consulting"

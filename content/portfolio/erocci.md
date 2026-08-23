@@ -1,7 +1,7 @@
 ---
 title: 'erocci Framework'
 slug: 'erocci'
-date: 
+date: 2013-06-01
 draft: false
 client: ""
 projectType: "Open Source"            # Open Source | Consulting | R&D | Product

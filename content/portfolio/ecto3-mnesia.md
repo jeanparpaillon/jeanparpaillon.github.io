@@ -1,7 +1,7 @@
 ---
 title: 'Ecto3 Mnesia'
 slug: 'ecto3-mnesia'
-date: 
+date: 2024-01-01
 draft: false
 client: ""
 projectType: "Open Source"            # Open Source | Consulting | R&D | Product

@@ -1,7 +1,7 @@
 ---
 title: 'Erlang D-Bus'
 slug: 'erlang-dbus'
-date: 
+date: 2016-07-01
 draft: false
 client: ""
 projectType: "Open Source"
