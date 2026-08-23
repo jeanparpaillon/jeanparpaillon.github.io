@@ -7,7 +7,7 @@ client: "OW2 Consortium"
 projectType: "Open Source"
 status: "completed"
 link: "https://www.ow2.org/"
-featured: false
+featured: true
 description: "Nine years in the governance of an international open-source consortium, six of them as President."
 summary: "President, board member and Technical Committee chairman of OW2 -- building an open-source community and business ecosystem around enterprise computing infrastructure software."
 cover: ""

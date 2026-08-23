@@ -7,7 +7,7 @@ client: ""
 projectType: "Consulting"
 status: "in_progress"
 link: ""
-featured: false
+featured: true
 description: "Long-term architecture and technical leadership for a telecom software platform."
 summary: "Senior consulting engagement combining software architecture, technical leadership and strategic advisory for the evolution of a distributed telecom platform."
 cover: ""
