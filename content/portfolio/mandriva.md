@@ -19,6 +19,7 @@ tags:
   - Innovation
   - R&D
   - Open Source
+  - European Programmes
 roles:
   - Product Owner
   - R&D Manager

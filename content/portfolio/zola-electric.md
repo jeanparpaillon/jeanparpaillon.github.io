@@ -23,6 +23,7 @@ tags:
   - SNMP
   - Mnesia
   - Architecture
+  - IoT
 roles:
   - Architect
   - Technical Lead

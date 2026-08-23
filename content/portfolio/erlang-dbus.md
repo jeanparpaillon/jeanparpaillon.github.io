@@ -16,6 +16,7 @@ tags:                      # Technologies & themes
   - Open Source
   - erlang
   - Distributed Systems
+  - D-Bus
 roles:                     # Architect | Technical Lead | Product Owner | R&D Manager | Consultant
   - Architect
   - Technical Lead

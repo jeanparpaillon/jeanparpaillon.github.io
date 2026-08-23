@@ -12,13 +12,15 @@ description: "Head of cloud computing innovation projects at an HPC simulation s
 summary: "Managing R&D partnerships on cloud computing and cloud rendering projects, and integrating their outcomes into the company's simulation products."
 cover: ""
 tags:
-  - High Performance Computing
+  - HPC
   - Cloud Computing
   - Cloud Rendering
   - Simulation
   - R&D
   - Innovation
   - Partnerships
+  - Standardization
+  - European Programmes
 roles:
   - R&D Manager
 domains:

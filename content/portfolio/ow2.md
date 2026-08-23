@@ -18,7 +18,9 @@ tags:
   - Ecosystem
   - Licensing
   - H2020
+  - FP7
   - Community
+  - European Programmes
 roles:
   - R&D Manager
   - Consultant

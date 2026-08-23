@@ -13,7 +13,8 @@ summary: "Five years on Kerrighed, a Single-System Image cluster operating syste
 cover: ""
 tags:
   - Linux
-  - High Performance Computing
+  - High Performance
+  - HPC
   - Clusters
   - Distributed Systems
   - Operating Systems

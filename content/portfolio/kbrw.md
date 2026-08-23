@@ -20,6 +20,7 @@ tags:
   - DevOps
   - Distributed Systems
   - Architecture
+  - CI/CD
 roles:
   - Architect
   - Technical Lead
