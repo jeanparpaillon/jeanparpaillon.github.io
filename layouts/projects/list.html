@@ -1,0 +1,131 @@
+{{/*
+  Work / portfolio listing, overriding the theme's projects/list.html.
+
+  Adds a row of filter buttons driven by data/portfolio_filters.yaml. Matching
+  is done here at build time: every card carries the ids of the filters it
+  satisfies in `data-filters`, and assets/js/custom/work-filters.js only
+  toggles visibility. Pagination is deliberately dropped -- filtering has to
+  see every project at once.
+*/}}
+{{ define "main" }}
+  {{/* Normalise the filter definitions, giving each one a stable id. */}}
+  {{ $filters := slice }}
+  {{ range hugo.Data.portfolio_filters }}
+    {{ $filters = $filters | append (dict
+      "id" (urlize .name)
+      "name" .name
+      "roles" (default slice .roles)
+      "tags" (default slice .tags)
+      "domains" (default slice .domains)
+    ) }}
+  {{ end }}
+
+  {{ $projects := .Pages }}
+  {{ $total := len $projects }}
+
+  {{/* Pre-render every possible count so the JS stays translation-agnostic. */}}
+  {{ $countLabels := dict }}
+  {{ range $i := seq 0 $total }}
+    {{ $countLabels = merge $countLabels (dict (string $i) (T "list.pages" (dict "count" $i))) }}
+  {{ end }}
+
+  <div class="mx-auto max-w-6xl">
+    <header class="mb-8">
+      <h1 class="text-foreground mb-4 text-3xl font-bold">
+        {{ .Title }}
+      </h1>
+
+      {{ if .Content }}
+        <div class="prose prose-neutral dark:prose-invert mb-6 max-w-none">
+          {{ .Content }}
+        </div>
+      {{ else if .Description }}
+        <p class="text-muted-foreground mb-6">
+          {{ .Description }}
+        </p>
+      {{ end }}
+
+      {{ with $filters }}
+        <div
+          class="work-filters"
+          role="group"
+          aria-label="{{ $.Title }} filters"
+          data-work-filters
+        >
+          <button
+            type="button"
+            class="work-filter"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            All
+          </button>
+          {{ range . }}
+            <button
+              type="button"
+              class="work-filter"
+              data-filter="{{ .id }}"
+              aria-pressed="false"
+            >
+              {{ .name }}
+            </button>
+          {{ end }}
+        </div>
+      {{ end }}
+
+      {{ if gt $total 0 }}
+        <div
+          class="text-muted-foreground text-sm"
+          data-work-count
+          data-count-labels="{{ $countLabels | jsonify }}"
+        >
+          {{ T "list.pages" (dict "count" $total) }}
+        </div>
+      {{ end }}
+    </header>
+
+    {{ if $projects }}
+      <div
+        class="mb-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        data-work-grid
+      >
+        {{ range $projects }}
+          {{ $page := . }}
+          {{ $matched := slice }}
+          {{ range $filters }}
+            {{ $hit := false }}
+            {{ if intersect .roles (default slice $page.Params.roles) }}{{ $hit = true }}{{ end }}
+            {{ if intersect .tags (default slice $page.Params.tags) }}{{ $hit = true }}{{ end }}
+            {{ if intersect .domains (default slice $page.Params.domains) }}{{ $hit = true }}{{ end }}
+            {{ if $hit }}{{ $matched = $matched | append .id }}{{ end }}
+          {{ end }}
+          <div class="work-card h-full" data-filters="{{ delimit $matched " " }}">
+            {{ partial "content/project-card.html" (dict "page" $page) }}
+          </div>
+        {{ end }}
+      </div>
+
+      <div class="work-empty text-muted-foreground py-16 text-center" data-work-empty hidden>
+        {{ T "article.empty" }}
+      </div>
+    {{ else }}
+      <div class="py-16 text-center">
+        <div
+          class="bg-muted/50 mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full"
+        >
+          {{ partial "features/icon.html" (dict "name" "folder" "size" "xl" "ariaLabel" "") }}
+        </div>
+        <h2 class="text-foreground mb-3 text-xl font-medium">
+          {{ T "article.empty" }}
+        </h2>
+        <a
+          href="{{ `/` | relLangURL }}"
+          class="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors"
+        >
+          {{ partial "features/icon.html" (dict "name" "home" "size" "sm" "ariaLabel" "") }}
+          {{ T "nav.backHome" }}
+        </a>
+      </div>
+    {{ end }}
+  </div>
+{{ end }}

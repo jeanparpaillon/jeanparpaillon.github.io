@@ -2,7 +2,7 @@
 title: "Scanbus"
 slug: "scanbus"
 date: 2026-08-01
-draft: true
+draft: false
 client: "Personal / Open Source"
 projectType: "Open Source"
 status: "in_progress"
@@ -17,7 +17,7 @@ tags:
   - Distributed Systems
   - D-Bus
   - Product
-  - AI-assisted development
+  - AI
 roles:
   - Architect
 domains:

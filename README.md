@@ -209,6 +209,29 @@ role = "roles"
 domain = "domains"
 ```
 
+The Work page (`/portfolio/`) opens with a row of filter buttons, defined in
+`data/portfolio_filters.yaml`. Each entry may carry any of `roles`, `tags` and
+`domains`; a project matches as soon as one of its front matter values appears
+in one of those lists (exact, case-sensitive, lists OR'ed together):
+
+```yaml
+- name: Architect
+  roles:
+    - Architect
+
+- name: Open Source
+  domains:
+    - Open Source
+  tags:
+    - Open Source
+```
+
+An "All" button is prepended automatically and is active on load. Matching runs
+at build time in `layouts/projects/list.html`, which stamps each card with the
+ids of the filters it satisfies; `assets/js/custom/work-filters.js` only toggles
+visibility. That layout also drops the theme's pagination -- filtering needs
+every project on the page at once.
+
 ## Recommendations
 
 ```yaml

@@ -7,3 +7,51 @@
  * generated at build time -- reuse the utilities the theme already emits, or
  * declare the styles here.
  */
+
+/* --- Work page filter bar (layouts/projects/list.html) --------------------- */
+
+.work-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.work-filter {
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  background-color: transparent;
+  color: var(--color-muted-foreground);
+  padding: 0.375rem 0.875rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.work-filter:hover {
+  border-color: var(--color-primary);
+  color: var(--color-foreground);
+}
+
+.work-filter:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.work-filter[aria-pressed="true"] {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+/* Cards are hidden with the `hidden` attribute; make sure nothing wins over it. */
+.work-card[hidden],
+.work-empty[hidden] {
+  display: none;
+}

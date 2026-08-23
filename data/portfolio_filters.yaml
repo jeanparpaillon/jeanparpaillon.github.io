@@ -1,0 +1,36 @@
+# Filter buttons on the Work page (/portfolio/).
+#
+# Rendered by layouts/projects/list.html in file order, after the built-in
+# "All" button (which is not listed here). Each entry may carry any of
+# `roles`, `tags` and `domains`; a project matches the filter as soon as one
+# of its front matter values appears in one of those lists -- the lists are
+# OR'ed together, and matching is exact and case-sensitive.
+#
+#   - name: Open Source
+#     domains:
+#       - Open Source
+#     tags:
+#       - Open Source
+
+- name: Architect
+  roles:
+    - Architect
+
+- name: Tech Lead
+  roles:
+    - Technical Lead
+
+- name: Distributed Systems
+  tags:
+    - Distributed Systems
+
+- name: Open Source
+  domains:
+    - Open Source
+  tags:
+    - Open Source
+
+- name: AI & Innovation
+  tags:
+    - AI
+    - Innovation
