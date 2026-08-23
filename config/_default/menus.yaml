@@ -1,72 +1,79 @@
+# Menu labels come from the target page's `linkTitle` (falling back to `title`),
+# so they translate with the content -- no i18n keys and no template override.
+# Entries without a pageRef (social) need an explicit `name`.
+
 main:
-  - name: Services
+  - identifier: services
     pageRef: /services
     weight: 10
     params:
       icon: layers
 
-  - name: Consulting & Transformation
+  - identifier: consulting
     pageRef: /services/consulting-transformation
-    parent: Services
+    parent: services
     weight: 1
 
-  - name: IT Innovation
+  - identifier: innovation
     pageRef: /services/it-innovation
-    parent: Services
+    parent: services
     weight: 2
 
-  - name: Architecture & Product
+  - identifier: architecture
     pageRef: /services/architecture-product
-    parent: Services
+    parent: services
     weight: 3
 
-  - name: Work
+  - identifier: portfolio
     pageRef: /portfolio
     weight: 20
     params:
       icon: projects
 
-  - name: About
+  - identifier: about
     pageRef: /about
     weight: 30
     params:
       icon: about
 
-  - name: Contact
+  - identifier: contact
     pageRef: /contact
     weight: 40
     params:
       icon: email
 
 footer:
-  - name: Work
+  - identifier: portfolio
     pageRef: /portfolio
     weight: 10
     params:
       icon: projects
-  - name: About
+  - identifier: about
     pageRef: /about
     weight: 20
     params:
       icon: about
-  - name: Contact
+  - identifier: contact
     pageRef: /contact
     weight: 30
     params:
       icon: email
 
 social:
-  - name: GitHub
+  - identifier: github
+    name: GitHub
     url: https://github.com/jeanparpaillon
     weight: 10
     params:
       icon: github
-  - name: LinkedIn
+  - identifier: linkedin
+    name: LinkedIn
     url: https://www.linkedin.com/in/jeanparpaillon/
     weight: 20
     params:
       icon: linkedin
-  - name: Email
+  - identifier: email
+    name: Email
     url: mailto:jean@parpaillon.info
     weight: 30
     params:

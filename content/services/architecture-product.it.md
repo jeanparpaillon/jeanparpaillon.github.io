@@ -1,4 +1,5 @@
 ---
+linkTitle: "Architettura & Prodotto"
 title: "Architettura Software & Prodotto"
 slug: "architecture-product"
 weight: 30

@@ -1,4 +1,5 @@
 ---
+linkTitle: "Contact"
 title: "Let's talk."
 layout: "contact"
 subtitle: "Have a project, a technical challenge, or an opportunity in mind?"

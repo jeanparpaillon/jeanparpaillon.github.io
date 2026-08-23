@@ -1,3 +1,8 @@
+# Translated copy for anything that lives in params rather than in content.
+# Language params are deep-merged over config/_default/params.yaml: maps merge
+# key by key, lists (keywords, expertise, actions) are replaced wholesale.
+# `en` is the default language and inherits params.yaml as-is.
+
 en:
   locale: en-US
   label: English
@@ -7,8 +12,78 @@ fr:
   locale: fr-FR
   label: Français
   weight: 2
+  params:
+    description: "Architecte logiciel senior & consultant en innovation IT. J'aide les organisations à transformer leurs défis technologiques, R&D et d'architecture en stratégies actionnables."
+    keywords:
+      - Architecture logicielle
+      - Innovation IT
+      - Systèmes distribués
+      - R&D
+      - Conseil
+      - Open Source
+    author:
+      title: "Architecte logiciel senior & consultant en innovation IT"
+      description: "Architecture, innovation et stratégie produit pour les systèmes techniques complexes."
+    hero:
+      title: "Architecte logiciel senior & consultant en innovation IT"
+      subtitle: |
+        J'aide les organisations à transformer leurs défis technologiques,
+        R&D et d'architecture en stratégies actionnables.
+      expertise:
+        - Architecture
+        - Innovation
+        - Systèmes distribués
+        - Open Source
+      actions:
+        - name: "Découvrir les services"
+          url: "/services/"
+          primary: true
+        - name: "Voir le portfolio"
+          url: "/portfolio/"
+          primary: false
+    contactCta:
+      title: "Un défi technologique ou d'innovation complexe ?"
+      description: "Parlons-en."
+      action:
+        name: "Me contacter"
+        url: "/contact/"
 
 it:
   locale: it-IT
   label: Italiano
   weight: 3
+  params:
+    description: "Architetto software senior & consulente per l'innovazione IT. Aiuto le organizzazioni a trasformare sfide tecnologiche, R&S e di architettura in strategie concrete."
+    keywords:
+      - Architettura software
+      - Innovazione IT
+      - Sistemi distribuiti
+      - R&S
+      - Consulenza
+      - Open Source
+    author:
+      title: "Architetto software senior & consulente per l'innovazione IT"
+      description: "Architettura, innovazione e strategia di prodotto per sistemi tecnici complessi."
+    hero:
+      title: "Architetto software senior & consulente per l'innovazione IT"
+      subtitle: |
+        Aiuto le organizzazioni a trasformare sfide tecnologiche, R&S
+        e di architettura in strategie concrete.
+      expertise:
+        - Architettura
+        - Innovazione
+        - Sistemi distribuiti
+        - Open Source
+      actions:
+        - name: "Scopri i servizi"
+          url: "/services/"
+          primary: true
+        - name: "Vedi i progetti"
+          url: "/portfolio/"
+          primary: false
+    contactCta:
+      title: "Hai una sfida tecnologica o di innovazione complessa?"
+      description: "Parliamone."
+      action:
+        name: "Contattami"
+        url: "/contact/"
