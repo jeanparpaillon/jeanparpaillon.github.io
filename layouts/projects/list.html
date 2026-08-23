@@ -12,8 +12,8 @@
   {{ $filters := slice }}
   {{ range hugo.Data.portfolio_filters }}
     {{ $filters = $filters | append (dict
-      "id" (urlize .name)
-      "name" .name
+      "id" .id
+      "i18n" .i18n
       "roles" (default slice .roles)
       "tags" (default slice .tags)
       "domains" (default slice .domains)
@@ -58,7 +58,7 @@
             data-filter="all"
             aria-pressed="true"
           >
-            All
+            {{ i18n "portfolio_all" }}
           </button>
           {{ range . }}
             <button
@@ -67,7 +67,7 @@
               data-filter="{{ .id }}"
               aria-pressed="false"
             >
-              {{ .name }}
+              {{ i18n .i18n }}
             </button>
           {{ end }}
         </div>

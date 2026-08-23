@@ -1,0 +1,19 @@
+# i18n/it.yaml
+
+portfolio_all:
+  other: "Tutti"
+
+portfolio_architecture:
+  other: "Architettura"
+
+portfolio_techlead:
+  other: "Lead Tecnico"
+
+portfolio_distributed:
+  other: "Sistemi Distribuiti"
+
+portfolio_opensource:
+  other: "Open Source"
+
+portfolio_innovation:
+  other: "IA & Innovazione"

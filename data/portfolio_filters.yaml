@@ -11,26 +11,30 @@
 #       - Open Source
 #     tags:
 #       - Open Source
-
-- name: Architect
+- id: architecture
+  i18n: portfolio_architecture
   roles:
     - Architect
 
-- name: Tech Lead
+- id: techlead
+  i18n: portfolio_techlead
   roles:
     - Technical Lead
 
-- name: Distributed Systems
+- id: distributed
+  i18n: portfolio_distributed
   tags:
     - Distributed Systems
 
-- name: Open Source
+- id: opensource
+  i18n: portfolio_opensource
   domains:
     - Open Source
   tags:
     - Open Source
 
-- name: AI & Innovation
+- id: innovation
+  i18n: portfolio_innovation
   tags:
     - AI
     - Innovation
