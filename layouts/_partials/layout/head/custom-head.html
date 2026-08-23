@@ -1,0 +1,88 @@
+{{/*
+  Language alternates + first-visit locale detection.
+
+  Overrides the theme's empty custom-head hook. Two things happen here:
+
+  1. <link rel="alternate" hreflang> for every translation of the current page,
+     plus x-default pointing at the default language. The theme emits none of
+     these on its own; search engines need them to understand that /portfolio/,
+     /fr/portfolio/ and /it/portfolio/ are the same page in three languages.
+
+  2. A tiny inline script that sends a first-time visitor to the version
+     matching their browser locale. It runs before paint (this partial is in
+     <head>) so there is no flash of the wrong language.
+
+     Rules, in order:
+       - Only on the first page view of a browsing session (sessionStorage
+         flag). After that every link and the language switcher navigate
+         normally -- the script never fights an explicit navigation.
+       - A language picked from the switcher wins over browser detection and
+         is remembered across sessions (localStorage).
+       - Otherwise navigator.languages is matched against the languages this
+         page actually exists in.
+
+     Everything is wrapped in try/catch: with storage disabled or JS off the
+     visitor simply stays on the URL they asked for.
+*/}}
+
+{{- $abs := dict -}}
+{{- $rel := dict -}}
+{{- range .AllTranslations -}}
+  {{- $abs = merge $abs (dict .Language.Lang .Permalink) -}}
+  {{- $rel = merge $rel (dict .Language.Lang .RelPermalink) -}}
+{{- end -}}
+
+{{- if gt (len $abs) 1 -}}
+  {{- range $lang, $url := $abs }}
+    <link rel="alternate" hreflang="{{ $lang }}" href="{{ $url }}" />
+  {{- end }}
+  {{- with index $abs hugo.Sites.Default.Language.Lang }}
+    <link rel="alternate" hreflang="x-default" href="{{ . }}" />
+  {{- end }}
+  <script>
+    (function () {
+      var alt = {{ $rel | jsonify | safeJS }};
+      var current = {{ .Language.Lang }};
+      var PREF = "lang:preferred";
+      var SEEN = "lang:session";
+
+      /* Remember an explicit pick from the header switcher, in both its
+         dropdown and cycle forms. Written synchronously on click, before the
+         browser follows the link, so the next page sees the new preference. */
+      function remember(e) {
+        var t = e.target;
+        if (!t || !t.closest) return;
+        var a = t.closest(
+          'a.language-cycle-btn, [data-dropdown-type="language"] a[href]'
+        );
+        if (!a) return;
+        var path = new URL(a.href, location.href).pathname;
+        for (var lang in alt) {
+          if (alt[lang] === path) {
+            try { localStorage.setItem(PREF, lang); } catch (err) {}
+            return;
+          }
+        }
+      }
+      document.addEventListener("click", remember);
+      document.addEventListener("auxclick", remember);
+
+      try {
+        if (sessionStorage.getItem(SEEN)) return;
+        sessionStorage.setItem(SEEN, "1");
+
+        var target = localStorage.getItem(PREF);
+        if (!target) {
+          var wanted = navigator.languages || [navigator.language || ""];
+          for (var i = 0; i < wanted.length; i++) {
+            var base = String(wanted[i]).toLowerCase().split("-")[0];
+            if (alt[base]) { target = base; break; }
+          }
+        }
+        if (target && target !== current && alt[target]) {
+          location.replace(alt[target] + location.search + location.hash);
+        }
+      } catch (err) {}
+    })();
+  </script>
+{{- end -}}

@@ -38,7 +38,8 @@ header:
   showThemeSwitch: false
   showDarkModeSwitch: false
   showContentWidthSwitch: false
-  showLanguageSwitch: false
+  showLanguageSwitch: true
+  languageSwitchMode: "dropdown"
 
 dock: "scroll"
 contentWidth: "56rem"
