@@ -1,0 +1,10 @@
+{{- $person := partial "schema/person.html" . -}}
+
+<script type="application/ld+json">
+{{ dict
+    "@context" "https://schema.org"
+    "@graph" (slice $person)
+  | jsonify
+  | safeHTML
+}}
+</script>

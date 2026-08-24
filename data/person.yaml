@@ -1,0 +1,23 @@
+name: Jean Parpaillon
+jobTitle: Senior IT Consultant & Software Architect
+description: >
+  Senior consultant specialized in software architecture,
+  innovation and distributed systems.
+
+image: /images/avatar.png
+
+sameAs:
+  - https://www.linkedin.com/in/jeanparpaillon/
+  - https://github.com/jeanparpaillon/
+
+knowsAbout:
+  - Software Architecture
+  - Distributed Systems
+  - Open Source
+  - Cloud Computing
+  - Artificial Intelligence
+  - Telecommunications
+  - Erlang
+  - Elixir
+  - Innovation
+  

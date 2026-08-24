@@ -1,0 +1,20 @@
+{{- $p := site.Data.person -}}
+
+{{- $person := dict
+  "@type" "Person"
+  "@id" (printf "%s#person" site.BaseURL)
+  "name" $p.name
+  "url" site.BaseURL
+  "jobTitle" $p.jobTitle
+  "description" $p.description
+  "sameAs" $p.sameAs
+  "knowsAbout" $p.knowsAbout
+-}}
+
+{{- with $p.image }}
+  {{- $person = merge $person (dict
+    "image" (absURL .)
+  )}}
+{{- end }}
+
+{{- return $person -}}
