@@ -8,8 +8,8 @@ projectType: "Open Source"
 status: "in_progress"
 link: "https://github.com/scanbus"
 featured: true
-description: "Example portfolio entry -- replace with a real project."
-summary: "Example portfolio entry -- replace with a real project."
+description: "Turns scanner workflows into a quick walk-up experience."
+summary: "Turns scanner workflows into a quick walk-up experience."
 cover: ""
 tags:
   - Rust

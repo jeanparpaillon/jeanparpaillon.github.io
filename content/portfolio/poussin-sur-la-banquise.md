@@ -12,10 +12,8 @@ description: "Arctic navigation on a 6.50m scow, turned into an art show. Produc
 summary: "President and producer of an adventure-based art project: sailing a 6.50m scow to Arctic waters, and building a show out of the voyage."
 cover: ""
 tags:
-  - Innovation
   - Adventure
   - Navigation
-  - Production
   - Poetry
 roles:
   - Product Owner
