@@ -15,6 +15,12 @@ links:
   - name: "Contattami su LinkedIn"
     url: "https://www.linkedin.com/in/jeanparpaillon/"
     icon: "linkedin"
+  - name: "Business Card"
+    url: "/contact/card"
+    icon: "card"
+  - name: "Aggiungimi ai contatti"
+    url: "/contact/card/contact.vcf"
+    icon: "card"
 ---
 
 Sono disponibile per:

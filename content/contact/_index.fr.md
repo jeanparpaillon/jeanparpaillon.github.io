@@ -15,6 +15,12 @@ links:
   - name: "Me contacter sur LinkedIn"
     url: "https://www.linkedin.com/in/jeanparpaillon/"
     icon: "linkedin"
+  - name: "Carte de visite"
+    url: "/contact/card"
+    icon: "card"
+  - name: "Ajoutez au contacts"
+    url: "/contact/card/contact.vcf"
+    icon: "card"
 ---
 
 Je suis disponible pour :

@@ -7,7 +7,7 @@ en:
   locale: en-US
   label: English
   weight: 1
-
+  
 fr:
   locale: fr-FR
   label: Français
