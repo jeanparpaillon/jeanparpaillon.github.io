@@ -29,10 +29,20 @@
       display: none;
     }
   </style>
+  
+  <script>
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+  </script>
 
 </head>
 
-<body>
+<body onclick="toggleFullscreen(); return false;">
 
 {{/* Load the SVG template */}}
 {{ $svg := resources.Get .Params.svg }}
