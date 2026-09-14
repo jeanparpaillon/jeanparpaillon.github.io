@@ -1,10 +1,10 @@
 BEGIN:VCARD
 VERSION:3.0
-FN:{{ .Params.card.name }}
-N:{{ .Params.card.name }};;;;
-TITLE:{{ .Params.card.title }}
-TEL;TYPE=CELL:{{ .Params.card.phone }}
-EMAIL;TYPE=INTERNET:{{ .Params.card.email }}
-ADR;TYPE=WORK:;;{{ .Params.card.location.line1 }};{{ .Params.card.location.line2 }};;France
-URL:{{ .Params.card.url }}
+FN:{{ site.Params.card.name }}
+N:{{ site.Params.card.name }};;;;
+TITLE:{{ site.Params.card.title }}
+TEL;TYPE=CELL:{{ site.Params.card.phone }}
+EMAIL;TYPE=INTERNET:{{ site.Params.card.email }}
+ADR;TYPE=WORK:;;{{ site.Params.card.location.line1 }};{{ site.Params.card.location.line2 }};;France
+{{ with site.GetPage "/" }}URL:{{ .Permalink }}{{ end }}
 END:VCARD
