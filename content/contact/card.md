@@ -1,8 +1,13 @@
 ---
+linkTitle: "Business Card"
 title: "Contact Jean Parpaillon"
-layout: "business_card"
+layout: "card"
 
 svg: "business_card.svg"
+
+outputs:
+  - HTML
+  - VCARD
 
 card:
   name: "Jean Parpaillon"
@@ -14,6 +19,6 @@ card:
     line1: "27, rue de Vannes"
     line2: "35600 Redon - France"
 
-  url: "https://parpaillon.info"
-  qr_url: "https://parpaillon.info/vcard"
+  url: "https://parpaillon.info"  
+  qr_url: "https://parpaillon.info/card/jean_parpaillon.vcf"
 ---

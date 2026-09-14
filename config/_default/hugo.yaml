@@ -42,13 +42,23 @@ markup:
     style: github
     tabWidth: 2
 
+mediaTypes:
+  "text/vcard":
+    suffixes: ["vcf"]
+
 outputs:
   home: ["HTML", "RSS", "JSON", "WebAppManifest"]
+  section: ["HTML", "RSS"]
 
 outputFormats:
   WebAppManifest:
     mediaType: "application/manifest+json"
     baseName: "site"
+    isPlainText: true
+
+  VCARD:
+    mediaType: "text/vcard"
+    baseName: "contact"
     isPlainText: true
 
 module:

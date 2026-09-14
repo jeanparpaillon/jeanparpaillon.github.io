@@ -42,6 +42,18 @@ main:
     params:
       icon: email
 
+  - identifier: card
+    pageRef: /contact/card
+    parent: contact
+    weight: 1
+    params:
+      icon: card
+
+  - identifier: add_me
+    pageRef: /contact/card/contact.vcf
+    parent: contact
+    weight: 2
+
 footer:
   - identifier: portfolio
     pageRef: /portfolio

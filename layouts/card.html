@@ -70,7 +70,7 @@
 
   <script>
     (() => {
-      const qrURL = {{ .Params.qr_url | jsonify }};
+      const qrURL = {{ .Params.card.qr_url | jsonify }};
 
       if (!qrURL) {
         return;

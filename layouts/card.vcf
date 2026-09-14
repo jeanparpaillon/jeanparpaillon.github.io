@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:{{ .Params.card.name }}
+N:{{ .Params.card.name }};;;;
+TITLE:{{ .Params.card.title }}
+TEL;TYPE=CELL:{{ .Params.card.phone }}
+EMAIL;TYPE=INTERNET:{{ .Params.card.email }}
+ADR;TYPE=WORK:;;{{ .Params.card.location.line1 }};{{ .Params.card.location.line2 }};;France
+URL:{{ .Params.card.url }}
+END:VCARD
