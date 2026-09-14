@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="{{ site.Language.Lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ .Title }}</title>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #2e3436;
+    }
+
+    svg {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    /* Hidden container used by qrcode.js */
+    #qr-generator {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+{{/* Load the SVG template */}}
+{{ $svg := resources.Get .Params.svg }}
+
+{{ if not $svg }}
+{{ errorf "SVG not found: %q" .Params.svg }}
+{{ end }}
+
+{{ $content := $svg.Content }}
+
+{{/* Replace text placeholders */}}
+{{ $content = replace $content "__NAME__" .Params.card.name }}
+{{ $content = replace $content "__TITLE__" .Params.card.title }}
+{{ $content = replace $content "__PHONE__" .Params.card.phone }}
+{{ $content = replace $content "__EMAIL__" .Params.card.email }}
+{{ $content = replace $content "__LOCATION_1__" .Params.card.location.line1 }}
+{{ $content = replace $content "__LOCATION_2__" .Params.card.location.line2 }}
+{{ $content = replace $content "__URL__" .Params.card.url }}
+
+{{/* Inline SVG */}}
+{{ $content | safeHTML }}
+
+{{/* Temporary container for qrcode.js */}}
+
+  <div id="qr-generator"></div>
+
+{{/* Load qrcode.js */}}
+{{ $qrcode := resources.Get "js/qrcode.min.js" }}
+
+{{ if not $qrcode }}
+{{ errorf "qrcode.min.js not found in assets/js/" }}
+{{ end }}
+
+  <script src="{{ $qrcode.RelPermalink }}"></script>
+
+  <script>
+    (() => {
+      const qrURL = {{ .Params.qr_url | jsonify }};
+
+      if (!qrURL) {
+        return;
+      }
+
+      /*
+       * The SVG contains:
+       *
+       * <rect id="qr" ... />
+       *
+       * Its position and dimensions define
+       * where the QR code should appear.
+       */
+      const placeholder = document.getElementById("qr");
+
+      if (!placeholder) {
+        console.error("QR placeholder '#qr' not found");
+        return;
+      }
+
+      const x = parseFloat(placeholder.getAttribute("x"));
+      const y = parseFloat(placeholder.getAttribute("y"));
+      const width = parseFloat(placeholder.getAttribute("width"));
+      const height = parseFloat(placeholder.getAttribute("height"));
+
+      const generator = document.getElementById("qr-generator");
+
+      /*
+       * Generate the QR code.
+       *
+       * qrcode.js generates a canvas.
+       */
+      new QRCode(generator, {
+        text: qrURL,
+        width: Math.round(width),
+        height: Math.round(height),
+        correctLevel: QRCode.CorrectLevel.M
+      });
+
+      const canvas = generator.querySelector("canvas");
+
+      if (!canvas) {
+        console.error("QR code canvas was not generated");
+        return;
+      }
+
+      /*
+       * Convert the generated QR code
+       * to a data URI.
+       */
+      const dataURL = canvas.toDataURL("image/png");
+
+      /*
+       * Create an SVG <image>.
+       */
+      const svgNS = "http://www.w3.org/2000/svg";
+
+      const image = document.createElementNS(svgNS, "image");
+
+      image.setAttribute("id", "qr-image");
+      image.setAttribute("x", x);
+      image.setAttribute("y", y);
+      image.setAttribute("width", width);
+      image.setAttribute("height", height);
+      image.setAttribute("href", dataURL);
+
+      /*
+       * Preserve the aspect ratio.
+       */
+      image.setAttribute(
+        "preserveAspectRatio",
+        "none"
+      );
+
+      placeholder.insertAdjacentElement(
+        "afterend",
+        image
+      );
+    })();
+  </script>
+
+</body>
+</html>
