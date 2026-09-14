@@ -48,8 +48,8 @@
 {{ $content = replace $content "__TITLE__" site.Params.card.title }}
 {{ $content = replace $content "__PHONE__" site.Params.card.phone }}
 {{ $content = replace $content "__EMAIL__" site.Params.card.email }}
-{{ $content = replace $content "__LOCATION_1__" site.Params.card.location.line1 }}
-{{ $content = replace $content "__LOCATION_2__" site.Params.card.location.line2 }}
+{{ $content = replace $content "__CITY__" site.Params.card.location.city }}
+{{ $content = replace $content "__COUNTRY__" site.Params.card.location.country }}
 {{ with site.GetPage "/" }}
 {{ $content = replace $content "__URL__" .Permalink }}
 {{ end }}
