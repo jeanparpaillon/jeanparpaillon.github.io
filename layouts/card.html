@@ -44,13 +44,15 @@
 {{ $content := $svg.Content }}
 
 {{/* Replace text placeholders */}}
-{{ $content = replace $content "__NAME__" .Params.card.name }}
-{{ $content = replace $content "__TITLE__" .Params.card.title }}
-{{ $content = replace $content "__PHONE__" .Params.card.phone }}
-{{ $content = replace $content "__EMAIL__" .Params.card.email }}
-{{ $content = replace $content "__LOCATION_1__" .Params.card.location.line1 }}
-{{ $content = replace $content "__LOCATION_2__" .Params.card.location.line2 }}
-{{ $content = replace $content "__URL__" .Params.card.url }}
+{{ $content = replace $content "__NAME__" site.Params.card.name }}
+{{ $content = replace $content "__TITLE__" site.Params.card.title }}
+{{ $content = replace $content "__PHONE__" site.Params.card.phone }}
+{{ $content = replace $content "__EMAIL__" site.Params.card.email }}
+{{ $content = replace $content "__LOCATION_1__" site.Params.card.location.line1 }}
+{{ $content = replace $content "__LOCATION_2__" site.Params.card.location.line2 }}
+{{ with site.GetPage "/" }}
+{{ $content = replace $content "__URL__" .Permalink }}
+{{ end }}
 
 {{/* Inline SVG */}}
 {{ $content | safeHTML }}
@@ -68,9 +70,33 @@
 
   <script src="{{ $qrcode.RelPermalink }}"></script>
 
+  {{ $qrURL := "" }}
+
+  {{ with site.GetPage site.Params.card.vcard_ref.page }}
+    {{ $format := .OutputFormats.Get site.Params.card.vcard_ref.format }}
+
+    {{ if not $format }}
+      {{ errorf
+        "Output format %q not found for page %q"
+        $.Params.card.vcard_ref.format
+        $.Params.card.vcard_ref.page
+      }}
+    {{ end }}
+
+    {{ $qrURL = $format.Permalink }}
+
+  {{ else }}
+
+    {{ errorf
+      "QR page reference not found: %q"
+      .Params.card.vcard_ref.page
+    }}
+
+  {{ end }}
+
   <script>
     (() => {
-      const qrURL = {{ .Params.card.qr_url | jsonify }};
+      const qrURL = {{ $qrURL | jsonify }};
 
       if (!qrURL) {
         return;
