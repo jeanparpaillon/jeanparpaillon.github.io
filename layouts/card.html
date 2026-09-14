@@ -31,18 +31,16 @@
   </style>
   
   <script>
-    function toggleFullscreen() {
-      if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen();
-      } else {
-        document.exitFullscreen();
-      }
+    function enterLandscape() {
+      document.documentElement.requestFullscreen()
+      .then(() => screen.orientation.lock("landscape"))
+      .catch(console.error);
     }
   </script>
 
 </head>
 
-<body onclick="toggleFullscreen(); return false;">
+<body onclick="enterLandscape(); return false;">
 
 {{/* Load the SVG template */}}
 {{ $svg := resources.Get .Params.svg }}
