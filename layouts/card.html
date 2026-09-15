@@ -31,16 +31,20 @@
   </style>
   
   <script>
-    function enterLandscape() {
-      document.documentElement.requestFullscreen()
-      .then(() => screen.orientation.lock("landscape"))
-      .catch(console.error);
+    function toggleLandscape() {
+      if (document.fullscreenElement) {
+        document.exitFullscreen().catch(console.error);
+      } else {
+        document.documentElement.requestFullscreen()
+        .then(() => screen.orientation.lock("landscape"))
+        .catch(console.error);
+      }
     }
   </script>
 
 </head>
 
-<body onclick="enterLandscape(); return false;">
+<body onclick="toggleLandscape(); return false;">
 
 {{/* Load the SVG template */}}
 {{ $svg := resources.Get .Params.svg }}
